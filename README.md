@@ -1,4 +1,4 @@
-# Assessment of the demesal shelf rockfish stock complex in the Southeast outside subdistrict of the Gulf of Alaska
+# Assessment of the demesal shelf rockfish stock complex in the southeast outside subdistrict of the Gulf of Alaska
 
 Please direct any questions to: Andrew Olson (andrew.olson@alaska.gov)
 
@@ -14,10 +14,21 @@ Directed commercial fisheries are held in the four management areas (EYKT, NSEO,
 ## Data Sources
 
 ### Commercial Fishery
+* Directed commercial fishery
+* Bycatch from groundfish fisheries
+  + Halibut IFQ
+  + Sablefish IFQ
+  + Lingcod directed fishery
+  + Pacific cod
+  + Black rockfish
+* Bycatch in salmon troll fishery
 
 ### Sport Fishery
+* Charter logbook (guided)
+* State-wide harvest survey (un-guided)
 
 ### Survey
+*  survey
 
 
 
