@@ -18,9 +18,9 @@ Directed commercial fisheries are held in the four management areas (EYKT, NSEO,
 * Bycatch from groundfish fisheries
   + Halibut IFQ
   + Sablefish IFQ
-  + Lingcod directed fishery
+  + Lingcod 
   + Pacific cod
-  + Black rockfish
+  + Black rockfish 
 * Bycatch in salmon troll fishery
 
 ### Sport Fishery
@@ -28,7 +28,7 @@ Directed commercial fisheries are held in the four management areas (EYKT, NSEO,
 * State-wide harvest survey (un-guided)
 
 ### Survey
-*  survey
+* ROV survey
 
 
 
