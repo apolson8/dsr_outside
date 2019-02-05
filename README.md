@@ -1,6 +1,6 @@
 # Assessment of the demesal shelf rockfish stock complex in the southeast outside subdistrict of the Gulf of Alaska
 
-Please direct any questions to: Andrew Olson (andrew.olson@alaska.gov)
+Please direct any questions to: Andrew Olson (andrew.olson@alaska.gov) and Kellii Wood (kellii.wood@alaska.gov)
 
 Source: 
 
@@ -30,7 +30,11 @@ Directed commercial fisheries are held in the four management areas (EYKT, NSEO,
 ### Survey
 * ROV survey
 
+<<<<<<< HEAD
 ## Survey Density Estimate using Distance Sampling Methodology
+=======
+## Yelloweye Rockfish Survey Density Estimate using Distance Sampling Methodology
+>>>>>>> 208b64de6670e0696934f6b8dbea016c8c349140
 The `Distance` package is used to estimate population densities and abundances using line and point transect sampling methodology. For Southeast Alaska yelloweye rockfish (YE) we conduct line transects using an remotely operated vehicle (ROV) to conduct line transects in YE rocky habitat and conduct video review to determine species ID and lengths.
 
 Distance sampling has 3 key assumptions that include:
@@ -61,7 +65,13 @@ Survey data consists of multiple tables that will need to be summarized and join
 **3. Video Quality Control**
 
   i) Reviews quality of video for good and bad segments for each line transect that is then used in determining good length transects from the ROV nav data and consists of video filename, video frame, time (UTC seconds), dive number, video quality (good or bad), video quality code, description of good and bad assignments (i.e. good going forward, ROV loitering in same area, going over a large drop-off, etc.), and a start and end assignment for each transect. 
-  
+
+### Distance Analysis
+Now that our survey data is tidyed and we have line length estimations for each transect with associated distances for each YE detected we can conduct an exploratory analysis using a histogram to determine if our data is realistic or not and if we need to make any further modifications to the data. Note that histogram bins can have an affect on how the data looks.
+
+Non-ideal data/histogram patterns include: spiked, poor, heaped, and overdispersed data.  
+
+
 
 
 
