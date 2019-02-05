@@ -67,7 +67,7 @@ Now that our survey data is tidyed and we have line length estimations for each 
 
 Non-ideal data/histogram patterns include: spiked, poor, heaped, and overdispersed data.  
 
-![Alt text](dsr_outside/figures/bad_data.png?raw=true "Title")
+
 
 
 
