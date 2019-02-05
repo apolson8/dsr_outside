@@ -62,26 +62,7 @@ Survey data consists of multiple tables that will need to be summarized and join
 
   i) Reviews quality of video for good and bad segments for each line transect that is then used in determining good length transects from the ROV nav data and consists of video filename, video frame, time (UTC seconds), dive number, video quality (good or bad), video quality code, description of good and bad assignments (i.e. good going forward, ROV loitering in same area, going over a large drop-off, etc.), and a start and end assignment for each transect. 
   
-```{r, echo=FALSE}
-library(DiagrammeR)
-mermaid("
-graph TD
-    A[ROV Survey] --> B[Navigation Data]
-    A[ROV Survey] --> C[Video Review]
-    C[Video Review] --> D[EventMeasure]
-    D[EventMeasure Software] --> E[Species ID]
-    D[EventMeasure Software] --> F[Species Length]
-    D[EventMeasure Software] --> G[Quality Control]
-    B[Navigation Data] --> H[Transect Length Estimation]
-    G[Quality Control] --> H[Transect Length Estimation]
-    E[Species ID] --> I[Specimen Data]
-    F[Species Length] --> I[Specimen Data]
-    H[Transect Length Estimation] --> J[Survey Data]
-    I[Specimen Data] --> J[Survey Data] 
-    
 
-")
-```
 
 
 
