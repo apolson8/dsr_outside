@@ -30,7 +30,7 @@ Directed commercial fisheries are held in the four management areas (EYKT, NSEO,
 ### Survey
 * ROV survey
 
-### Survey Density Estimate using Distance Sampling Methodology
+## Survey Density Estimate using Distance Sampling Methodology
 The `Distance` package is used to estimate population densities and abundances using line and point transect sampling methodology. For Southeast Alaska yelloweye rockfish (YE) we conduct line transects using an remotely operated vehicle (ROV) to conduct line transects in YE rocky habitat and conduct video review to determine species ID and lengths.
 
 Distance sampling has 3 key assumptions that include:
