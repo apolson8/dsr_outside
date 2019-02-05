@@ -9,13 +9,13 @@ library(Distance)
 #Import Survey Navigation Data and Video Quality Control Review Data
 
 #Navigation file for ROV tracking during transects
-sseo_nav <-read_csv("data/survey/sseo/2018/2018_sseo_nav_data.csv")
+sseo_nav <-read_csv("data/survey/2018/2018_sseo_nav_data.csv")
 
 ggplot(sseo_nav, aes(ROV_X, ROV_Y)) + geom_point() +
   facet_wrap(~DIVE_NO, scales = "free")
 
 #Video quality control review used for trimming out bad sections of the nav data
-sseo_qc <- read_csv("data/survey/sseo/2018/2018_sseo_qc.csv")
+sseo_qc <- read_csv("data/survey/2018/2018_sseo_qc.csv")
 
 
 #Need to get both tables in similar format before joining
