@@ -30,11 +30,10 @@ Directed commercial fisheries are held in the four management areas (EYKT, NSEO,
 ### Survey
 * ROV survey
 
-<<<<<<< HEAD
 ## Survey Density Estimate using Distance Sampling Methodology
-=======
+
 ## Yelloweye Rockfish Survey Density Estimate using Distance Sampling Methodology
->>>>>>> 208b64de6670e0696934f6b8dbea016c8c349140
+
 The `Distance` package is used to estimate population densities and abundances using line and point transect sampling methodology. For Southeast Alaska yelloweye rockfish (YE) we conduct line transects using an remotely operated vehicle (ROV) to conduct line transects in YE rocky habitat and conduct video review to determine species ID and lengths.
 
 Distance sampling has 3 key assumptions that include:
@@ -52,7 +51,7 @@ Distance sampling has 3 key assumptions that include:
   i) During video review you collect measurements from the transect line that are converted within the Eventmeasure software from a radial measurement (distance measurement from ROV point of view) to a perpendicular measurement (distance measurement from ROV side view).
   
 ### Survey Data
-Survey data consists of multiple tables that will need to be summarized and joined.  You will be working with 3 main tables in order to produce a valid density estimate which consist of:
+Survey data consists of multiple tables that will need to be tidied, summarized, and joined.  You will be working with 3 main tables in order to produce a valid density estimate which consist of:
 
 **1. ROV Navigation Table**
     
@@ -66,10 +65,13 @@ Survey data consists of multiple tables that will need to be summarized and join
 
   i) Reviews quality of video for good and bad segments for each line transect that is then used in determining good length transects from the ROV nav data and consists of video filename, video frame, time (UTC seconds), dive number, video quality (good or bad), video quality code, description of good and bad assignments (i.e. good going forward, ROV loitering in same area, going over a large drop-off, etc.), and a start and end assignment for each transect. 
 
-### Distance Analysis
-Now that our survey data is tidyed and we have line length estimations for each transect with associated distances for each YE detected we can conduct an exploratory analysis using a histogram to determine if our data is realistic or not and if we need to make any further modifications to the data. Note that histogram bins can have an affect on how the data looks.
+### Exploratory Analysis
+Post-tidying survey data is analyzed using histograms as an exploratory analysis to determine oddities in the data visually.  The general pattern we want to see is a shoulder shape with the highest detection of fish occuring closest to the transect line with detection decreasing as distance from the transect line increases.  If oddities occur such as, spikes, heaped, overdisperesed, or generally poor data this is most likely due to bad lighting during video review, camera issues, ROV data, etc.  Best step to do is double-check your raw data and ensure you have tidied your data correctly for analysis.  If issues still remain we can establish bin sizes within the historgram and cutoff points so the data behaves and works nicely.
 
-Non-ideal data/histogram patterns include: spiked, poor, heaped, and overdispersed data.  
+### Distance Analysis
+
+A probability detection function is fit to the survey data which describes the relationship between distance and the probablity of detecting a fish.  
+
 
 
 
