@@ -69,6 +69,8 @@ Post-tidying survey data is analyzed using histograms as an exploratory analysis
 
 ![](http://distancesampling.org/images/distance-animation.gif)
 
+<img src="https://i.imgur.com/2NtktLg.png"> 
+
 **Source:** http://distancesampling.org
 
 
@@ -84,6 +86,9 @@ A probability detection function is fit to the survey data which describes the r
 
 **4. Estimator Efficiency**--use a model that will lead to a precise estimator of density.
 
+<img src="https://i.imgur.com/xCozhZx.png">
+
+**Source:** http://distancesampling.org
 
 **Model Fit:**
 Model fitting is composed of 2 key features: key functions which determines the basic model shape and adjustment terms that can make models more robust
@@ -96,6 +101,10 @@ Model fitting is composed of 2 key features: key functions which determines the 
 | Negative Exponential |                     |
   
 Note that the more parameters you fit the greater the flexibility is fitting the probability detection function, however, uncertainty increases.  Models with too few parameters tend to produce esimtates with low variance and high bias, where as models with too many parameters tend to produce estimates with low bias and high variance.  The most common key function/adjustment term combinations that are used are half normal/cosine and hazard rate/hermite polynomial.  
+
+*Ex.* `sseo.model1 <- ds(tidy_data, key = "hr", adjustment = "herm", convert.units = 0.000001)`
+
+Converting units here ensures that all our distance measurements are in meters and converts our survey area (km<sup>2</sup>) to meters. 
 
 **Model Selection Criteria:**
 
@@ -116,4 +125,5 @@ When we are choosing the best model there are a number of criteria that we must 
 
 When you have selected your model you can look at the model `summary()` to obtain a YE density estimate for your surveyed area with associated standard error (se), coefficient of variance (cv), lower and upper confidence levels (lcl & ucl), and degrees of freedom (df). 
 
+## References
 
