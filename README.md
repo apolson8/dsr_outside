@@ -1,6 +1,6 @@
-# Assessment of the demersal shelf rockfish stock complex in the southeast outside subdistrict of the Gulf of Alaska <img src="http://acuasi.alaska.edu/sites/default/files/inline-images/fishandgame_small.png" width = "100" height = "100"> 
+# Assessment of the demersal shelf rockfish stock complex in the southeast outside subdistrict of the Gulf of Alaska 
 
-Please direct any questions to: Andrew Olson (andrew.olson@alaska.gov) and Kellii Wood (kellii.wood@alaska.gov) 
+Please direct any questions to: Andrew Olson (andrew.olson@alaska.gov) and Kellii Wood (kellii.wood@alaska.gov) <img src="http://acuasi.alaska.edu/sites/default/files/inline-images/fishandgame_small.png" width = "50" height = "50"> 
 
 **Source:** *Olson, A., Williams, B., and Jaenicke, M. (in press). Chapter 14: Assessment of the demersal shelf rockfish stock complex in the southeast outside subdistrict of the Gulf of Alaska. Stock Assessment and Fishery Evaluation Report for the Groundfish Resources of the Gulf of Alaska. North Pacific Fishery Management Council, Anchorage, AK.*
 
