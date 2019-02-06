@@ -69,6 +69,8 @@ Survey data consists of multiple tables that will need to be tidied, summarized,
 ### Exploratory Analysis
 Post-tidying survey data is analyzed using histograms as an exploratory analysis to determine oddities in the data visually.  The general pattern we want to see is a shoulder shape with the highest detection of fish occuring closest to the transect line with detection decreasing as distance from the transect line increases.  If oddities occur such as, spikes, heaped, overdisperesed, or generally poor data this is most likely due to bad lighting during video review, camera issues, ROV data, etc.  Best step to do is double-check your raw data and ensure you have tidied your data correctly for analysis.  If issues still remain we can establish bin sizes within the historgram and cutoff points so the data behaves and works nicely.
 
+![](http://distancesampling.org/images/distance-animation.gif)
+
 
 ### Model Fit and Selection
 
