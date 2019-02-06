@@ -1,4 +1,4 @@
-# Assessment of the demesal shelf rockfish stock complex in the southeast outside subdistrict of the Gulf of Alaska
+# Assessment of the demersal shelf rockfish stock complex in the southeast outside subdistrict of the Gulf of Alaska
 
 Please direct any questions to: Andrew Olson (andrew.olson@alaska.gov) and Kellii Wood (kellii.wood@alaska.gov)
 
@@ -27,10 +27,11 @@ Directed commercial fisheries are held in the four management areas (EYKT, NSEO,
 * Charter logbook (guided)
 * State-wide harvest survey (un-guided)
 
+### Subsistence Fishery
+* Community harvest interviews and surveys
+
 ### Survey
 * ROV survey
-
-## Survey Density Estimate using Distance Sampling Methodology
 
 ## Yelloweye Rockfish Survey Density Estimate using Distance Sampling Methodology
 
@@ -68,9 +69,18 @@ Survey data consists of multiple tables that will need to be tidied, summarized,
 ### Exploratory Analysis
 Post-tidying survey data is analyzed using histograms as an exploratory analysis to determine oddities in the data visually.  The general pattern we want to see is a shoulder shape with the highest detection of fish occuring closest to the transect line with detection decreasing as distance from the transect line increases.  If oddities occur such as, spikes, heaped, overdisperesed, or generally poor data this is most likely due to bad lighting during video review, camera issues, ROV data, etc.  Best step to do is double-check your raw data and ensure you have tidied your data correctly for analysis.  If issues still remain we can establish bin sizes within the historgram and cutoff points so the data behaves and works nicely.
 
-### Distance Analysis
 
-A probability detection function is fit to the survey data which describes the relationship between distance and the probablity of detecting a fish.  
+### Model Fit and Selection
+
+A probability detection function is fit to the survey data which describes the relationship between distance and the probablity of detecting a fish.  When selecting a model there are a few items to consider including: 
+
+**1. Model Robustness**--use a model that will fit a wide variety of plausible shapes for *g(x)*;
+
+**2. Shape Criterion**--use a model with a good shoulder;
+
+**3. Pooling Robustness**--use a model for the average detection function, even when many factors affect detectability;
+
+**4. Estimator Efficiency**--use a model that will lead to a precise estimator of density.
 
 
 
