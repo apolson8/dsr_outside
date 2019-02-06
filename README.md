@@ -97,7 +97,8 @@ Model fitting is composed of 2 key features: key functions which determines the 
   
 Note that the more parameters you fit the greater the flexibility is fitting the probability detection function, however, uncertainty increases.  Models with too few parameters tend to produce esimtates with low variance and high bias, where as models with too many parameters tend to produce estimates with low bias and high variance.  The most common key function/adjustment term combinations that are used are half normal/cosine and hazard rate/hermite polynomial.  
 
-**Model Selection Criteria**
+**Model Selection Criteria:**
+
 When we are choosing the best model there are a number of criteria that we must look and and test which includes:
 
 
