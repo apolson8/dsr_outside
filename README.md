@@ -63,6 +63,8 @@ Survey data consists of multiple tables that will need to be tidied, summarized,
 **3. Video Quality Control**
 
   i) Reviews quality of video for good and bad segments for each line transect that is then used in determining good length transects from the ROV nav data and consists of video filename, video frame, time (UTC seconds), dive number, video quality (good or bad), video quality code, description of good and bad assignments (i.e. good going forward, ROV loitering in same area, going over a large drop-off, etc.), and a start and end assignment for each transect. 
+  
+<img src="https://i.imgur.com/6l7IpTA.png?1">
 
 ### Exploratory Analysis
 Post-tidying survey data is analyzed using histograms as an exploratory analysis to determine oddities in the data visually.  The general pattern we want to see is a shoulder shape with the highest detection of fish occuring closest to the transect line with detection decreasing as distance from the transect line increases.  If oddities occur such as, spikes, heaped, overdisperesed, or generally poor data this is most likely due to bad lighting during video review, camera issues, ROV data, etc.  Best step to do is double-check your raw data and ensure you have tidied your data correctly for analysis.  If issues still remain we can establish bin sizes within the historgram, cutoff points, and truncate the data so it works nicely.
@@ -113,17 +115,22 @@ When we are choosing the best model there are a number of criteria that we must 
 
 **1. Good shoulder fit**; 
 
-**2. Akaike's Information Criterion (AIC):** determines which model is best based on the probability detection function likelihood and the number of parameters in the model.  Lower AIC values are best;
+**2. Akaike's Information Criterion (AIC):** determines which model is best based on the probability detection function likelihood and the number of parameters in the model.  Lower AIC values are best.  In the case where the difference between model AICs is less than 2, we should select the simplest of the models;
 
 **3. Fewest number of parameters**;
 
 **4. Low standard error associated with N**;
 
-**5. Goodness of Fit Test:** test that determines if our sample data represents what we would actually see in nature.  
+**5. Goodness of Fit Test:** test that determines if our sample data represents what we would actually see in nature;  
 
 **6. QQ-Plot:** plot of data should fit a fairly straight line indicating the data has a normal distribution.  Look out for major outliers, gaps, step-wise patterns, and poor fit.  
 
 When you have selected your model you can look at the model `summary()` to obtain a YE density estimate for your surveyed area with associated standard error (se), coefficient of variance (cv), lower and upper confidence levels (lcl & ucl), and degrees of freedom (df). 
 
 ## References
+
+1. Miller, D.L., Rexstad, E., Thomas, L., Marshall, L., and Laake, J. (2017). "*Distance Sampling in R*".
+    bioRxiv 063891, doi:(https://doi.org/10.1101/063891).
+
+
 
