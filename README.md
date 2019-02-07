@@ -125,7 +125,9 @@ When we are choosing the best model there are a number of criteria that we must 
 
 **6. QQ-Plot:** plot of data should fit a fairly straight line indicating the data has a normal distribution.  Look out for major outliers, gaps, step-wise patterns, and poor fit.  
 
-When you have selected your model you can look at the model `summary()` to obtain a YE density estimate for your surveyed area with associated standard error (se), coefficient of variance (cv), lower and upper confidence levels (lcl & ucl), and degrees of freedom (df). 
+To compare mutliple model summaries within a single table use: `summarize_ds_models(sseo_model1, sseo_model2, sseo_model3)`
+
+When you have selected your model you can look at the model `summary()` or `sseo.model1$dht$individuals$D` to obtain a YE density estimate for your surveyed area with associated standard error (se), coefficient of variance (cv), lower and upper confidence levels (lcl & ucl), and degrees of freedom (df). 
 
 ## References
 
