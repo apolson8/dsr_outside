@@ -111,7 +111,7 @@ transect_pred
 write.csv(transect_pred, file = "output/2018_sseo_smooth_predict.csv")
 
 
-sseo_transects <- read_csv("data/survey/sseo/2018/2018_sseo_smoothed_transect_lengths.csv")
+sseo_transects <- read_csv("data/survey/2018/2018_sseo_smoothed_transect_lengths.csv")
 
 transect_summary <- sseo_transects %>% group_by(Dive) %>% 
   summarise(total_length_m = sum(Shape_Length, na.rm = TRUE))
@@ -125,7 +125,7 @@ transect_summary <- transect_summary %>% filter(Dive != 8)
 
 #Import ROV specimen data and filter for YE only
 
-sseo_bio <- read_csv("data/survey/sseo/2018/2018_sseo_species.csv") %>% filter(SPECIES == 145)
+sseo_bio <- read_csv("data/survey/2018/2018_sseo_species.csv") %>% filter(SPECIES == 145)
 
 #For the density estimate we only want adults and subadults as these are selected for in the fishery
 #filter bio data so raw data is only adults and subadults for YE
@@ -177,7 +177,7 @@ summary(sseo.model2)
 
 plot(sseo.model2)
 
-#Cosine Adjustment with hazard rate key function
+#Hazard key function with Hermite polynomial adjustment
 sseo.model3 <- ds(sseo_distance, key = "hr", adjustment = "herm",
                   convert.units = 0.000001)
 
@@ -185,13 +185,7 @@ summary(sseo.model3)
 
 plot(sseo.model3)
 
-#Hazard key function with Hermite polynomial adjustment
-sseo.model4 <-ds(sseo_distance, key = "hr", adjustment = "herm",
-                 convert.units = 0.000001)
 
-summary(sseo.model4)
-
-plot(sseo.model4)
 
 
 #Goodness of Fist Test
@@ -209,9 +203,9 @@ sseo.model3$sht$individuals$summary
 
 
 #Abundance Estimate#
-sseo.model4$dht$individuals$N
+sseo.model3$dht$individuals$N
 
 #Density Estimate
-sseo.model4$dht$individuals$D
+sseo.model3$dht$individuals$D
 
 
