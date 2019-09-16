@@ -9,13 +9,13 @@ library(Distance)
 #Import Survey Navigation Data and Video Quality Control Review Data
 
 #Navigation file for ROV tracking during transects
-sseo_nav <-read_csv("data/survey/sseo/2018/2018_sseo_nav_data.csv")
+sseo_nav <-read_csv("data/survey/2018/SSEO/2018_sseo_nav_data.csv")
 
 ggplot(sseo_nav, aes(ROV_X, ROV_Y)) + geom_point() +
   facet_wrap(~DIVE_NO, scales = "free")
 
 #Video quality control review used for trimming out bad sections of the nav data
-sseo_qc <- read_csv("data/survey/sseo/2018/2018_sseo_qc.csv")
+sseo_qc <- read_csv("data/survey/2018/SSEO/2018_sseo_qc.csv")
 
 
 #Need to get both tables in similar format before joining
@@ -37,11 +37,11 @@ transect <- full_join(sseo_nav, sseo_qc, by = c("Dive", "Seconds"))
 transect_qc <- transect %>% fill(Family) %>% filter(!is.na(Family)) %>% 
   select(Seconds, Dive, ROV_X, ROV_Y, Family)
 
-write.csv(transect_qc, file = "output/transect_qc.csv")
+write.csv(transect_qc, file = "output/2018/SSEO/transect_qc.csv")
 
 View(transect_qc)
 
-jpeg(filename = "figures/sseo_rov_transects2018.jpg",
+jpeg(filename = "figures/survey/2018/SSEO/sseo_rov_transects2018.jpg",
      width = 12, height = 15, units = "in", res = 50)
 
 ggplot(transect_qc, aes(ROV_X, ROV_Y)) + geom_point(aes(colour = factor(Family))) +
@@ -65,7 +65,7 @@ is.factor(transect_qc$Dive)
 is.numeric(transect_qc$Dive)
 
 
-pdf("output/2018_sseo_smoothed_transects.pdf")
+pdf("output/2018/SSEO/2018_sseo_smoothed_transects.pdf")
 
 #Smoothing Loop that also calculates distance between points
 par(mfrow = c(2, 2))
@@ -102,16 +102,16 @@ for (i in 1:length (levels (transect_qc$Dive))) {
 
 dev.off()
 
-write.csv(outPut, file = "output/smooth_transect_output.csv")
+write.csv(outPut, file = "output/2018/SSEO/smooth_transect_output.csv")
 
 transect_pred <- cbind(transect_qc, predX = outPut$X, predY = outPut$Y, Dist = outPut$dist)
 
 transect_pred
 
-write.csv(transect_pred, file = "output/2018_sseo_smooth_predict.csv")
+write.csv(transect_pred, file = "output/2018/SSEO/2018_sseo_smooth_predict.csv")
 
 
-sseo_transects <- read_csv("data/survey/sseo/2018/2018_sseo_smoothed_transect_lengths.csv")
+sseo_transects <- read_csv("data/survey/2018/SSEO/2018_sseo_smoothed_transect_lengths.csv")
 
 transect_summary <- sseo_transects %>% group_by(Dive) %>% 
   summarise(total_length_m = sum(Shape_Length, na.rm = TRUE))
@@ -125,7 +125,7 @@ transect_summary <- transect_summary %>% filter(Dive != 8)
 
 #Import ROV specimen data and filter for YE only
 
-sseo_bio <- read_csv("data/survey/sseo/2018/2018_sseo_species.csv") %>% filter(SPECIES == 145)
+sseo_bio <- read_csv("data/survey/2018/SSEO/2018_sseo_species.csv") %>% filter(SPECIES == 145)
 
 #For the density estimate we only want adults and subadults as these are selected for in the fishery
 #filter bio data so raw data is only adults and subadults for YE
@@ -177,7 +177,7 @@ summary(sseo.model2)
 
 plot(sseo.model2)
 
-#Cosine Adjustment with hazard rate key function
+#Hazard key function with Hermite polynomial adjustment
 sseo.model3 <- ds(sseo_distance, key = "hr", adjustment = "herm",
                   convert.units = 0.000001)
 
@@ -185,13 +185,7 @@ summary(sseo.model3)
 
 plot(sseo.model3)
 
-#Hazard key function with Hermite polynomial adjustment
-sseo.model4 <-ds(sseo_distance, key = "hr", adjustment = "herm",
-                 convert.units = 0.000001)
-
-summary(sseo.model4)
-
-plot(sseo.model4)
+#hazard rate key function is the best model to use
 
 
 #Goodness of Fist Test
@@ -209,9 +203,9 @@ sseo.model3$sht$individuals$summary
 
 
 #Abundance Estimate#
-sseo.model4$dht$individuals$N
+sseo.model3$dht$individuals$N
 
 #Density Estimate
-sseo.model4$dht$individuals$D
+sseo.model3$dht$individuals$D
 
 

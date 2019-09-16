@@ -158,16 +158,16 @@ dev.off()
 ##DSR HARVEST BY SECTOR##
 DSR_HRVST_SECTOR<-read_excel("data/fishery/YE summary tables SEO.xlsx", sheet = 2)
 
-DSR_HRVSTsum<-DSR_HRVST_SECTOR %>% select(Year, Catch_Type, Catch_mt)
+DSR_HRVSTsum<-DSR_HRVST_SECTOR %>% filter(Year < 2018) %>% select(Year, Catch_Type, Catch_mt)
 
 
-jpeg(filename = "H:/Groundfish/ROCKFISH/DSR/dsr_safe/figures/dsr harvest by catch type.jpg",
+jpeg(filename = "figures/dsr harvest by catch type.jpg",
      width = 7, height = 5, units = "in", res = 600)
 
 ggplot(DSR_HRVSTsum, aes(x=Year,y=Catch_mt, fill=Catch_Type)) + geom_bar(stat="identity") + 
-  ylab("Catch (t)") + ylim(0,610) + scale_x_continuous(breaks = pretty(DSR_HRVSTsum$Year, n = 5)) +
-  scale_fill_manual(values= cbPalette) + scale_color_manual(values = cbPalette) +
-  theme(legend.position=c(0.75,0.78)) 
+  ylab("Harvest (t)") + ylim(0,610) + scale_x_continuous(breaks = pretty(DSR_HRVSTsum$Year, n = 5)) +
+  scale_fill_grey() +
+  theme(legend.position=c(0.75,0.78), legend.title = element_blank()) 
 
 dev.off()
 
