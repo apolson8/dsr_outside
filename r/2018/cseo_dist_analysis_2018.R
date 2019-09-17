@@ -197,7 +197,7 @@ summary(cseo.model2)
 plot(cseo.model2)
 
 #Cosine Adjustment with hazard rate key function
-cseo.model3 <- ds(cseo_distance, key = "hr", adjustment = "herm",
+cseo.model3 <- ds(cseo_distance, key = "hr", adjustment = "cos",
                   convert.units = 0.000001)
 
 summary(cseo.model3)
